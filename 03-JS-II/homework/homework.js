@@ -162,6 +162,7 @@ function esVerdadero(valor){
   //Escribe tu código aquí
   if(valor === true){
     return "Soy verdadero";
+    
   }
   return "Soy falso";
 }
