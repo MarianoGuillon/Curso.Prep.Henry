@@ -37,7 +37,8 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
-  return (array.push(elemento));
+  array.push(elemento);
+  return (array);
 }
 
 
@@ -46,7 +47,8 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
-  return (array.unshift(elemento));
+  array.unshift(elemento);
+  return (array);
 }
 
 
@@ -57,9 +59,10 @@ function dePalabrasAFrase(palabras) {
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
   var palabrasConcatenadas = "";
-  for(let i=0; i<palabras.length; i++){
-    palabrasConcatenadas= palabrasConcatenadas+ " " +palabras[i];
+  for(let i=0; i<palabras.length-1; i++){
+    palabrasConcatenadas= palabrasConcatenadas + palabras[i] +" " ;
   }
+  palabrasConcatenadas = palabrasConcatenadas+palabras[palabras.length-1];
   return palabrasConcatenadas;
 }
 
@@ -82,7 +85,7 @@ function agregarNumeros(numeros) {
   // Suma todos los enteros y devuelve el valor
   // Tu código:
   let suma = 0;
-  for(let i=0;numeros.length;i++){
+  for(let i=0;i<numeros.length;i++){
     suma = suma + numeros[i];
   }
   return suma;
@@ -94,10 +97,12 @@ function promedioResultadosTest(resultadosTest) {
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
   let suma = 0;
-  for(let i=0;resultadosTest.length;i++){
+  let j=0;
+  for(let i=0;i<resultadosTest.length;i++){
     suma = suma + resultadosTest[i];
+    j++
   }
-  return suma/i;
+  return suma/j;
 }
 
 
@@ -106,7 +111,7 @@ function numeroMasGrande(numeros) {
   // Devuelve el número más grande
   // Tu código:
   let mayor=0;
-  for(let i=0;numeros.length;i++){
+  for(let i=0;i<numeros.length;i++){
     if(numeros[i]>mayor){
       mayor=numeros[i];
     }
@@ -119,7 +124,15 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-
+  let l = arguments.length;
+  let rta = 1;
+  if(l===0){
+    return 0;
+  }
+  for(let i=0; i<l; i++){
+    rta = rta*arguments[i];
+  }
+  return rta;
 }
 
 
@@ -127,7 +140,7 @@ function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 19.
   //Escribe tu código aquí
   let contador = 0;
-  for(let i=0;numeros.length;i++){
+  for(let i=0;i<arreglo.length;i++){
     if(arreglo[i]>19){
       contador +=1;
     }
@@ -152,10 +165,9 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  let long = n.length;
-  let multiplo = Math.pow(10,long-1);
-  if(n/multiplo===9){
-    return true;
+  let num = n.toString()
+  if(num.charAt(0) === "9"){
+    return true
   }
   return false;
 }
@@ -226,6 +238,21 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  var array = [];
+  var suma = numero;
+  for(var i= 0; i<10; i++) {
+    suma = suma + 2;
+    if(suma === i) break;
+    else {
+      array.push(suma);
+    }
+  }
+  if(i < 10) {
+    return 'Se interrumpió la ejecución';
+  }
+  else {
+      return array;
+  }
   
 }
 
@@ -237,7 +264,15 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
-
+  var array = [];
+  var suma = numero;
+  for(let i=0;i<10;i++){
+    if(i!==5){
+      suma = suma + 2;
+      array.push(suma);
+    }
+  }
+  return array;
 }
 
 
