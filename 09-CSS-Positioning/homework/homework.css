@@ -17,23 +17,50 @@ archivo en cualquiera de estas carpetas, estás en el lugar equivocado.
 
 /* Acá va tu código */
 
+#ejercicioDos {
+    visibility:hidden;
+}
 
 /* Ejercicio 3: */
 
 /* Acá va tu código */
-
+#containerImagen {
+    margin-top: 100px;
+    margin-left: 200px;
+}
+#ejercicioTres {
+    margin-top: 100px;
+    margin-left: 200px;
+}
 
 
 /* Ejercicio 4: */
 
 /* Acá va tu código */
-
+#ejercicioCuatro {
+    position: fixed;
+    top: 0px;
+    left:0px
+}
 
 
 /* Ejercicio 5: */
 
 /* Acá va tu código */
+#ejercicioCinco {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    flex-direction: row-reverse;
+}
 
 
 /* Ejercicio 6. */
+#ejercicioSiente {
+ margin: 20px;   
+    
+}
+.textoElemento{
+    font-size: 15px;
+}
